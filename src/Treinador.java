@@ -1,5 +1,5 @@
 
-public class Treinador {
+abstract class Treinador {
 	private int numpokemons;
 	private String[] pokemon = new String[6];
 	private String treinador;

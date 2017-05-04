@@ -24,4 +24,5 @@ abstract class Pokemon {
 		this.dano[2] = dano[2];
 		this.dano[3] = dano[3];
 	}
+	
 }

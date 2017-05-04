@@ -1,8 +1,8 @@
 
 abstract class Treinador {
-	private int numpokemons;
-	private String[] pokemon = new String[6];
-	private String treinador;
+	private int numpokemons;  //todos os treinadores possuem um certo numero de pokemons
+	private String[] pokemon = new String[6];  //nomes dos pokemons de cada treinador
+	private String treinador;  //nome do treinador
 	Treinador (String treinador, int numpokemons, String pokemon[]) {
 		this.treinador=treinador;
 		this.numpokemons=numpokemons;

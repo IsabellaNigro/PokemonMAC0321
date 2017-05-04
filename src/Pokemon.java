@@ -7,11 +7,11 @@ abstract class Pokemon {
 	//vida do pokemon
 	private int HP;
 	//cada ataque tem uma quantidade de dano
-	private String dano[] = new String[4];
+	private int dano[] = new int[4];
 	//cada pokemon tem um tipo
 	private String tipo;
 	//construtor
-	Pokemon(String nome, int HP, String tipo, String ataque[], String dano[]){
+	Pokemon(String nome, int HP, String tipo, String ataque[], int dano[]){
 		this.nome = nome;
 		this.HP = HP;
 		this.tipo = tipo;

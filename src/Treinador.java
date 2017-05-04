@@ -3,7 +3,8 @@ public class Treinador {
 	private int numpokemons;
 	private String[] pokemon = new String[6];
 	private String treinador;
-	Treinador (int numpokemons, String pokemon[]) {
+	Treinador (String treinador, int numpokemons, String pokemon[]) {
+		this.treinador=treinador;
 		this.numpokemons=numpokemons;
 		this.pokemon[0]=pokemon[0];
 		this.pokemon[1]=pokemon[1];

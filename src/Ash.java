@@ -6,7 +6,7 @@ public class Ash extends Treinador {
 	
 	public void atacar(Pokemon inimigo) {
 		System.out.println("Ataque do Ash realizado com sucesso!");
-		inimigo.HP-=10;
+		inimigo.HP-=10;   //CRIAR UMA CLASSSE SET HP
 	}
 	public void trocarpokemon() {
 		System.out.println("Ash trocou seu Pokemón!");

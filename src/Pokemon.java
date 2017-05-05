@@ -36,7 +36,21 @@ abstract class Pokemon {
 		this.HP += HP;
 		return HP; 
 	}
-	//metodo para imprimir os ataques 
+	//metodo para imprimir os ataques
+	public void imprimeAtaque(int num){
+		if (num == 1){
+			System.out.print(ataque[0]);
+		}
+		if (num == 2){
+			System.out.print(ataque[1]);
+		}
+		if (num == 3){
+			System.out.print(ataque[2]);
+		}
+		if (num == 4){
+			System.out.print(ataque[3]);
+		}
+	}
 	public void pokemonAtaca(int num, Pokemon inimigo){
 		if (num == 1){
 			System.out.println("O pokemon "+inimigo.getNomePokemon()+" esta com "+inimigo.SetHP(dano[num]));

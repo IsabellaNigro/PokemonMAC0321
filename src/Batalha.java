@@ -19,7 +19,6 @@ public class Batalha {
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();
 		Pikachu P1 = new Pikachu ();
-		
 		Bulbasaur P2 = new Bulbasaur();
 	/*
 		Charmander P3 = new Charmander();

@@ -26,7 +26,11 @@ abstract class Treinador {
 		return numpokemons;
 	}
 	
-	public String[] getNomePokemons() {
-		return pokemon;
+	public String getNomePokemon (int a) {
+		return this.pokemon[a];
+	}
+	
+	public String[] listaNomePokemon() {
+		return this.pokemon;
 	}
 }

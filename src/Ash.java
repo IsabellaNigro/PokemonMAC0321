@@ -1,7 +1,7 @@
 
 public class Ash extends Treinador {
 	public Ash() { 
-		super("Ash", 1, new String[] {"Pikachu", "Bulbasauro", "Charmander", "Onix", "Graveler"});
+		super("Ash", 2, new String[] {"Pikachu", "Bulbasauro", "Charmander", "Onix", "Graveler"});
 	}
 	
 	public void atacar(int num, Pokemon inimigo) {

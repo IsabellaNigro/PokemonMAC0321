@@ -18,7 +18,7 @@ abstract class Pokemon {
 		this.ataque[0] = ataque[0];
 		this.ataque[1] = ataque[1];
 		this.ataque[2] = ataque[2];
-		this.ataque[3] = ataque[3];
+		//this.ataque[3] = ataque[3];
 		this.dano[0] = dano[0];
 		this.dano[1] = dano[1];
 		this.dano[2] = dano[2];

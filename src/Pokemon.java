@@ -60,4 +60,9 @@ abstract class Pokemon {
 		}
 	}
 	
+	//FAZER FUNCAO PRA CHECAR SE ESTA VIVO
+	public boolean vivoOuMorto(){
+		if (HP>0) return true;
+		else return false;
+	}
 }

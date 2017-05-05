@@ -1,5 +1,8 @@
 
 public class Batalha {
+	public void Batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
+		
+	}
 	public static void iniciarBatalha (Treinador A, Treinador B, Pokemon PA, Pokemon PB) {
 		System.out.println("O treinador "+A.getNomeTreinador()+" possui "+A.getNumPokemons()+" pokemóns!");
 		System.out.print("Os pokemóns de "+A.getNomeTreinador()+" são: ");
@@ -12,10 +15,11 @@ public class Batalha {
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu primeiro pokemón!");
 		System.out.println("O pokemón escolhido foi: "+B.getNomePokemon(0)+" e seu HP é: "+B.getHP(PB));
 		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(0)+"!");
-		System.out.println("O pokemón irá usar "+PA.imprimeAtaque(1));
+		System.out.println("O treinador irá usar "+PA.imprimeAtaque(1));
 		PA.pokemonAtaca(1, PB);
+		if (PB.vivoOuMorto() )
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(0)+"!");
-		System.out.println("O pokemón irá usar "+PB.imprimeAtaque(1));
+		System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
 
 
 	}
@@ -32,6 +36,7 @@ public class Batalha {
 		
 		System.out.println("A batalha Pokemón entre "+T1.getNomeTreinador()+" e "+T2.getNomeTreinador()+" irá começar!");
 		iniciarBatalha (T1, T2, P1, P2);
+		//TESTAR HEAL 
 		
 	}
 }

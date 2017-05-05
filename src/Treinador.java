@@ -13,7 +13,7 @@ abstract class Treinador {
 		this.pokemon[4]=pokemon[4];
 		this.pokemon[5]=pokemon[5];
 	}
-	abstract void atacar(Pokemon inimigo);
+	abstract void atacar(int num,Pokemon inimigo);
 	abstract void trocarpokemon();
 	abstract void usaritem();
 	abstract void fugir();

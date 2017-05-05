@@ -24,5 +24,19 @@ abstract class Pokemon {
 		this.dano[2] = dano[2];
 		this.dano[3] = dano[3];
 	}
+	public int GetHP(){
+		return HP;
+	}
+	//metodo para adicionar ou retirar HP de acordo com a batalha
+	public int SetHP(int HP){
+		return this.HP + HP; 
+	}
+	//metodo para imprimir os ataques 
+	public void Ataque(int num){
+		if (num == 1) System.out.println(ataque[0]);
+		if (num == 2) System.out.println(ataque[1]);
+		if (num == 3) System.out.println(ataque[2]);
+		if (num == 4) System.out.println(ataque[3]);
+	}
 	
 }

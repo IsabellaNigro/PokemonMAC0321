@@ -19,4 +19,5 @@ public class Trash extends Treinador {
 	public int getHP(Pokemon escolhido) {
 		return escolhido.getHPPokemon();
 	}
+	
 }

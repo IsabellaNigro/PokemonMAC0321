@@ -18,11 +18,10 @@ public class Batalha {
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();
 		Pikachu P1 = new Pikachu ();
-		Bulbasaur P2 = new Bulbasaur();/*
+		Bulbasaur P2 = new Bulbasaur();
 		Charmander P3 = new Charmander();
 		Onix P4 = new Onix ();
 		Graveler P5 = new Graveler(); 
-		*/
 		
 		System.out.println("A batalha Pokemón entre "+T1.getNomeTreinador()+" e "+T2.getNomeTreinador()+" irá começar!");
 		iniciarBatalha (T1, T2, P1, P2);

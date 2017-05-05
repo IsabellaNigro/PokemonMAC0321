@@ -17,4 +17,16 @@ abstract class Treinador {
 	abstract void trocarpokemon();
 	abstract void usaritem();
 	abstract void fugir();
+	
+	public String getNomeTreinador() {
+		return treinador;
+	}
+	
+	public int getNumPokemons() {
+		return numpokemons;
+	}
+	
+	public String[] getNomePokemons() {
+		return pokemon;
+	}
 }

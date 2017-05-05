@@ -34,7 +34,7 @@ abstract class Pokemon {
 	//metodo para adicionar ou retirar HP de acordo com a batalha
 	public int SetHP(int HP){
 		this.HP += HP;
-		return HP; 
+		return this.HP; 
 	}
 	//metodo para imprimir os ataques
 	public String imprimeAtaque(int num){
@@ -47,16 +47,16 @@ abstract class Pokemon {
 	}
 	public void pokemonAtaca(int num, Pokemon inimigo){
 		if (num == 1){
-			System.out.println("O pokemon "+inimigo.getNomePokemon()+" esta com "+inimigo.SetHP(dano[num]));
+			System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
 		}
 		if (num == 2){
-			System.out.println("O pokemon "+inimigo.getNomePokemon()+" esta com "+inimigo.SetHP(dano[num]));
+			System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
 		}
 		if (num == 3){
-			System.out.println("O pokemon "+inimigo.getNomePokemon()+" esta com "+inimigo.SetHP(dano[num]));
+			System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
 		}
 		if (num == 4){
-			System.out.println("O pokemon "+inimigo.getNomePokemon()+" esta com "+inimigo.SetHP(dano[num]));
+			System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
 		}
 	}
 	

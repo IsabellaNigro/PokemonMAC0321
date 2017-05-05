@@ -12,8 +12,11 @@ public class Batalha {
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu primeiro pokemón!");
 		System.out.println("O pokemón escolhido foi: "+B.getNomePokemon(0)+" e seu HP é: "+B.getHP(PB));
 		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(0)+"!");
-		System.out.println("O pokemón irá usar ");
+		System.out.println("O pokemón irá usar "+PA.imprimeAtaque(1));
+		PA.pokemonAtaca(1, PB);
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(0)+"!");
+		System.out.println("O pokemón irá usar "+PB.imprimeAtaque(1));
+
 
 	}
 

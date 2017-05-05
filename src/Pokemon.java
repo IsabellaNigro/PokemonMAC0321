@@ -37,19 +37,13 @@ abstract class Pokemon {
 		return HP; 
 	}
 	//metodo para imprimir os ataques
-	public void imprimeAtaque(int num){
-		if (num == 1){
-			System.out.print(ataque[0]);
-		}
-		if (num == 2){
-			System.out.print(ataque[1]);
-		}
-		if (num == 3){
-			System.out.print(ataque[2]);
-		}
-		if (num == 4){
-			System.out.print(ataque[3]);
-		}
+	public String imprimeAtaque(int num){
+		if (num == 1) return ataque[0];
+		if (num == 2) return ataque[1];
+		if (num == 3) return ataque[2];
+		if (num == 4) return ataque[3];
+		else return null;
+		
 	}
 	public void pokemonAtaca(int num, Pokemon inimigo){
 		if (num == 1){

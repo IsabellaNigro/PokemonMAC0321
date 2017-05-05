@@ -1,7 +1,7 @@
 
 public class Trash extends Treinador {
 	Trash() { 
-		super("Trash", 3, new String[] {"Pikachu", "Bulbasauro", "Pikachu", "Onix", "Graveler"});
+		super("Trash", 3, new String[] {"Bulbasauro", "Pikachu", "Pikachu", "Onix", "Graveler"});
 	}
 	public void atacar(int num, Pokemon inimigo) {
 		System.out.println("Ataque do Trash realizado com sucesso!");
@@ -15,5 +15,8 @@ public class Trash extends Treinador {
 	}
 	public void fugir() {
 		System.out.println("Trash fugiu da batalha!");
+	}
+	public int getHP(Pokemon escolhido) {
+		return escolhido.getHPPokemon();
 	}
 }

@@ -17,6 +17,7 @@ abstract class Treinador {
 	abstract void trocarpokemon();
 	abstract void usaritem();
 	abstract void fugir();
+	abstract int getHP(Pokemon escolhido);
 	
 	public String getNomeTreinador() {
 		return treinador;

@@ -47,7 +47,7 @@ public class Batalha {
 	
 	//metodo que sera chamado enquanto houver batalha 
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
-		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(0)+"!");
+		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(numdemortosA)+"!");
 		System.out.println("O treinador irá usar "+PA.imprimeAtaque(1));
 		System.out.println();
 		PA.pokemonAtaca(1, PB); 
@@ -55,7 +55,7 @@ public class Batalha {
 		vivoOuMorto(A, B, PA, PB);
 		System.out.println();
 		//CRIAR CHECAGEM DE CONDICAO PARA CONTINUAR A BATALHA DPS DOS ATAQUES 
-		System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(0)+"!");
+		System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(numdemortosB)+"!");
 		System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
 		System.out.println();
 		PB.pokemonAtaca(1, PA);
@@ -81,7 +81,7 @@ public class Batalha {
 		listarPokemonsDoTreinadorA(A);
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0;
-		while (i<B.getNumPokemons() && j<A.getNumPokemons()) {
+		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
 			if (PA[i].getHPPokemon()<0)
 				i++;
 			if (PB[j].getHPPokemon()<0)

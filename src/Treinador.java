@@ -36,8 +36,8 @@ abstract class Treinador {
 		return this.pokemon[a];
 	}
 	
-	public void listaNomePokemon(int a) {
-		for (int i=0; i<a-1; i++)
+	public void listaNomePokemon(int a, int numerodemortos) {
+		for (int i=numerodemortos; i<a-1; i++)
 			System.out.print(pokemon[i]+", ");
 		System.out.println(pokemon[a-1]);
 	}

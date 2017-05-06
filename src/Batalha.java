@@ -50,10 +50,10 @@ public class Batalha {
 	public static void escolhasDePokemons(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		if (numdemortosA < A.getNumPokemons() && numdemortosB < B.getNumPokemons() ){
 			System.out.println("O treinador "+A.getNomeTreinador()+" irá escolher seu pokemón!");
-			System.out.println("O pokemón escolhido foi: "+PA.getNomePokemon()+" e seu HP é: "+PA.getHPPokemon());
+			System.out.println("O pokemón escolhido foi: "+PA.getNomePokemon()+" e seu HP é: "+PA.getHPPokemon()+"/"+PA.getHPmax());
 			System.out.println();
 			System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu pokemón!");
-			System.out.println("O pokemón escolhido foi: "+PB.getNomePokemon()+" e seu HP é: "+PB.getHPPokemon());
+			System.out.println("O pokemón escolhido foi: "+PB.getNomePokemon()+" e seu HP é: "+PB.getHPPokemon()+"/"+PB.getHPmax());
 			System.out.println();
 		}
 	}

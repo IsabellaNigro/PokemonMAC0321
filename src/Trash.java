@@ -12,7 +12,7 @@ public class Trash extends Treinador {
 	}
 	public void usaritem(Pokemon P) {
 		System.out.println("Trash usou um item de cura!");
-		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 < P.getHPmax())
+		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 <= P.getHPmax())
 			P.SetHP(25);
 	}
 	public void fugir() {

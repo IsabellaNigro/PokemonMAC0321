@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Batalha {
 	static int numdemortosA=0;
@@ -26,6 +27,16 @@ public class Batalha {
 		}
 		else System.out.println("O treinador "+B.getNomeTreinador()+" não tem pokemóns!!!");
 	}
+	//gera um numero aleatorio para escolher os ataques dos pokemons
+	public static int gerarAtaqueRandomico() {
+		int max=4;
+	    int min=1;
+	    int diff=max-min;
+	    Random rn = new Random();
+	    int i = rn.nextInt(diff+1);
+	    i+=min;
+	    return i;
+	}
 	// guardamos o numero de pokemons mortos de cada treinador para saber quando trocar ou terminar a batalha
 	public static void numDePokemonsMortosDeA(){
 		numdemortosA++;
@@ -49,24 +60,27 @@ public class Batalha {
 	
 	//metodo que sera chamado enquanto houver batalha 
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
+		int numerodoataque=gerarAtaqueRandomico();
 		if (PA.vivoOuMorto() == true){
 			System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
-			System.out.println("O treinador irá usar "+PA.imprimeAtaque(1));
+			System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
 			System.out.println();
-			PA.pokemonAtaca(1, PB); 
+			PA.pokemonAtaca(numerodoataque, PB); 
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 			vivoOuMorto(A, B, PA, PB);
 		}
 		System.out.println();
 		if (PB.vivoOuMorto() == true){
 			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
-			System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
+			System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
 			System.out.println();
-			PB.pokemonAtaca(1, PA);
+			PB.pokemonAtaca(numerodoataque, PA);
 			vivoOuMorto(A, B, PA, PB);
 		}
 		System.out.println();
 	}
+	
+
 	
 	public static void vivoOuMorto(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		if (PB.vivoOuMorto()==false) {
@@ -161,6 +175,11 @@ public class Batalha {
 		iniciarBatalha (T1, T2, PA1, PB1);
 		iniciarBatalha (T3, T4, PA2, PB2);
 		//TESTAR HEAL 
+		
+
+
+		
+		
 		
 	}
 }

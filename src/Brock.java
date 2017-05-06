@@ -1,7 +1,7 @@
 
 public class Brock extends Treinador {
 	public Brock() { 
-		super("Brock", 6, new String[] {"Pikachu", "Bulbasauro", "Charmander", "Onix", "Graveler", "Pidgeotto"});
+		super("Brock", 5, new String[] {"Ninetales", "Cyndaquil", "Dratini", "Totodile", "Squirtle", null});
 	}
 	
 	public void atacar(int num, Pokemon inimigo) {

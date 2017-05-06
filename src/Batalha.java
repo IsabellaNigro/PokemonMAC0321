@@ -109,6 +109,8 @@ public class Batalha {
 		System.out.println("-----------------------------------------------------------------------------------------");
 		System.out.println();
 		System.out.println();
+		numdemortosA = 0;
+		numdemortosB = 0;
 	}
 	
 

@@ -38,16 +38,16 @@ public class Batalha {
 	//o metodo imprime os pokemons escolhidos e seus HPs
 	public static void escolhasDePokemons(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		System.out.println("O treinador "+A.getNomeTreinador()+" irá escolher seu pokemón!");
-		System.out.println("O pokemón escolhido foi: "+A.getNomePokemon(0)+" e seu HP é: "+PA.getHPPokemon());
+		System.out.println("O pokemón escolhido foi: "+PA.getNomePokemon()+" e seu HP é: "+PA.getHPPokemon());
 		System.out.println();
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu pokemón!");
-		System.out.println("O pokemón escolhido foi: "+B.getNomePokemon(0)+" e seu HP é: "+PB.getHPPokemon());
+		System.out.println("O pokemón escolhido foi: "+PB.getNomePokemon()+" e seu HP é: "+PB.getHPPokemon());
 		System.out.println();
 	}
 	
 	//metodo que sera chamado enquanto houver batalha 
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
-		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(numdemortosA)+"!");
+		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 		System.out.println("O treinador irá usar "+PA.imprimeAtaque(1));
 		System.out.println();
 		PA.pokemonAtaca(1, PB); 
@@ -56,7 +56,7 @@ public class Batalha {
 		System.out.println();
 		//CRIAR CHECAGEM DE CONDICAO PARA CONTINUAR A BATALHA DPS DOS ATAQUES
 		if (PB.vivoOuMorto() == true){
-			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(numdemortosB)+"!");
+			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 			System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
 			System.out.println();
 			PB.pokemonAtaca(1, PA);

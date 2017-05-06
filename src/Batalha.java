@@ -83,24 +83,29 @@ public class Batalha {
 		listarPokemonsDoTreinadorA(A);
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0, k=0;
-		while (i<A.getNumPokemons() && j<B.getNumPokemons() && k<5) {
-			if (PA[i].getHPPokemon()<0){
+		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
+			if (PA[i].getHPPokemon()<=0 && i<6){
 				// se o pokemon atual morreu vai pro proximo 
-				i++; System.out.println("chegou1"+ i);
+				i++; //System.out.println("chegou1"+ i);
 			}
 				
-			if (PB[j].getHPPokemon()<0){ // se o pokemon atual morreu vai pro proximo 
-				j++; System.out.println("chegou2" +j);
+			if (PB[j].getHPPokemon()<=0 && j<6){ // se o pokemon atual morreu vai pro proximo 
+				j++; //System.out.println("chegou2" +j);
 			}	
-			escolhasDePokemons(A, B, PA[i], PB[j]); //MUDAR O treinador Trash irá escolher seu pokemón!O pokemón escolhido foi: Raichu e seu HP é: 100
-			batalha(A, B, PA[i], PB[j]);
-			k++;
-			//i++;
-			//j++;
+			if (i<=5 && j<=5) {
+				escolhasDePokemons(A, B, PA[i], PB[j]); //MUDAR O treinador Trash irá escolher seu pokemón!O pokemón escolhido foi: Raichu e seu HP é: 100
+				batalha(A, B, PA[i], PB[j]);
+			}
 		}
+		if (i==6)
+			System.out.println("Trash venceu a batalha!!");
+		if (j==6)
+			System.out.println("Ash venceu a batalha!!");
+		
 		
 		
 	}
+	
 
 	public static void main(String[] args) {
 		Pokemon[] PA = new Pokemon[6];

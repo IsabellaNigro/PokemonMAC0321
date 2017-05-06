@@ -1,6 +1,6 @@
 
 public class Bulbasaur extends Pokemon {
 	public Bulbasaur(){
-		super ("Bulbasaur", 100, "grama", new String[]{"folha", "leaf", "arvore", "raiz"}, new int[]{50,50,50,50});
+		super ("Bulbasaur", 90, "Grama", new String[]{"Folha Navalha", "Chicote de Cipó", "Semente Sanguessuga", "Dança de Pétalas"}, new int[]{30,25,30,40});
 	}
 }

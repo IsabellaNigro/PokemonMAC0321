@@ -1,7 +1,7 @@
 
 public class Pikachu extends Pokemon{
 	public Pikachu(){
-		super ("Pikachu", 100, "eletrico", new String[]{"choque do trovao", "esfera eletrica", "raio de trovao", "cauda de ferro"}, new int[]{50,50,50,50});
+		super ("Pikachu", 80, "Elétrico", new String[]{"Choque do Trovão", "Esfera Elétrica", "Investida Trovão", "Ataque Rápido"}, new int[]{40,25,25,20});
 	}
 	
 }

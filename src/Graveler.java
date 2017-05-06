@@ -1,6 +1,6 @@
 
 public class Graveler extends Pokemon{
 	public Graveler(){
-		super ("Graveler", 100, "pedra", new String[]{"pedrada", "rock", "preda", "pedregulho"}, new int[]{50, 50 , 50, 50});
+		super ("Graveler", 90, "Pedra", new String[]{"Rolo Compressor", "Lançamento de Rocha", "Investida", "Pedregulho"}, new int[]{35, 20 , 25, 30});
 	}
 }

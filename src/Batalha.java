@@ -54,12 +54,14 @@ public class Batalha {
 		//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 		vivoOuMorto(A, B, PA, PB);
 		System.out.println();
-		//CRIAR CHECAGEM DE CONDICAO PARA CONTINUAR A BATALHA DPS DOS ATAQUES 
-		System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(numdemortosB)+"!");
-		System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
-		System.out.println();
-		PB.pokemonAtaca(1, PA);
-		vivoOuMorto(A, B, PA, PB);
+		//CRIAR CHECAGEM DE CONDICAO PARA CONTINUAR A BATALHA DPS DOS ATAQUES
+		if (PB.vivoOuMorto() == true){
+			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(numdemortosB)+"!");
+			System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
+			System.out.println();
+			PB.pokemonAtaca(1, PA);
+			vivoOuMorto(A, B, PA, PB);
+		}
 		System.out.println();
 	}
 	
@@ -82,15 +84,15 @@ public class Batalha {
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0;
 		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
-			if (PA[i].getHPPokemon()<0)
+			if (PA[i].getHPPokemon()<0) // se o pokemon atual morreu vai pro proximo 
 				i++;
-			if (PB[j].getHPPokemon()<0)
+			if (PB[j].getHPPokemon()<0) // se o pokemon atual morreu vai pro proximo 
 				j++;
 				
-			escolhasDePokemons(A, B, PA[i], PB[j]);
+			escolhasDePokemons(A, B, PA[i], PB[j]); //MUDAR O treinador Trash irá escolher seu pokemón!O pokemón escolhido foi: Raichu e seu HP é: 100
 			batalha(A, B, PA[i], PB[j]);
-			i++;
-			j++;
+			//i++;
+			//j++;
 		}
 		
 		

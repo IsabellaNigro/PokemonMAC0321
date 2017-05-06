@@ -34,6 +34,8 @@ abstract class Treinador {
 	public void listaNomePokemon(int a, int numerodemortos) {
 		for (int i=numerodemortos; i<a-1; i++)
 			System.out.print(pokemon[i]+", ");
-		System.out.println(pokemon[a-1]);
+		if (a!=numerodemortos)
+			System.out.println(pokemon[a-1]);
+		else System.out.println("não há mais pokemóns!");
 	}
 }

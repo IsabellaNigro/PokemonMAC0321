@@ -9,7 +9,7 @@ public class Batalha {
 			// deixei a linha de baixo com comentario pq ta dando problema (tirando mais de uma vez os mortos)
 			System.out.println("O treinador "+A.getNomeTreinador()+" possui "+(A.getNumPokemons()-numdemortosA)+" pokemóns!");
 			System.out.print("Os pokemóns de "+A.getNomeTreinador()+" são: ");
-			A.listaNomePokemon(A.getNumPokemons(), numdemortosA);  //AQUI TEM ERRO - matando pokemon
+			A.listaNomePokemon(A.getNumPokemons(), numdemortosA);  
 			System.out.println();
 		}
 		else System.out.println("O treinador "+A.getNomeTreinador()+" não tem pokemóns!!!");
@@ -21,7 +21,7 @@ public class Batalha {
 			// deixei a linha de baixo com comentario pq ta dando problema (tirando mais de uma vez os mortos)
 			System.out.println("O treinador "+B.getNomeTreinador()+" possui "+(B.getNumPokemons()-numdemortosB)+" pokemóns!");
 			System.out.print("Os pokemóns de "+B.getNomeTreinador()+" são: ");
-			B.listaNomePokemon(B.getNumPokemons(), numdemortosB); //AQUI TEM ERRO - matando pokemon
+			B.listaNomePokemon(B.getNumPokemons(), numdemortosB); 
 			System.out.println();
 		}
 		else System.out.println("O treinador "+B.getNomeTreinador()+" não tem pokemóns!!!");

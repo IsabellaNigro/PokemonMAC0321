@@ -27,6 +27,11 @@ abstract class Treinador {
 		return numpokemons;
 	}
 	
+	public int setNumPokemons() {
+		numpokemons--;
+		return numpokemons;
+	}
+	
 	public String getNomePokemon (int a) {
 		return this.pokemon[a];
 	}

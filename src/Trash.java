@@ -1,7 +1,7 @@
 
 public class Trash extends Treinador {
 	Trash() { 
-		super("Trash", 5, new String[] {"Bulbasauro", "Pikachu", "Raichu", "Onix", "Graveler"});
+		super("Trash", 5, new String[] {"Raichu", "Onix", "Pikachu", "Raichu", "Bulbasauro", "Graveler"});
 	}
 	public void atacar(int num, Pokemon inimigo) {
 		System.out.println("Ataque do Trash realizado com sucesso!");

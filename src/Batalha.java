@@ -100,10 +100,19 @@ public class Batalha {
 				batalha(A, B, PA[i], PB[j]);
 			}
 		}
-		if (i==A.getNumPokemons())
+		if (i==A.getNumPokemons()) {
 			System.out.println("Trash venceu a batalha!!");
-		if (j==B.getNumPokemons())
+			System.out.println("-------------------------------------------------");
+			System.out.println();
+			System.out.println();
+		}
+		if (j==B.getNumPokemons()) {
 			System.out.println("Ash venceu a batalha!!");
+			System.out.println("-------------------------------------------------");
+			System.out.println();
+			System.out.println();
+		}
+
 		
 		
 		
@@ -111,21 +120,35 @@ public class Batalha {
 	
 
 	public static void main(String[] args) {
-		Pokemon[] PA = new Pokemon[6];
-		Pokemon[] PB = new Pokemon[6];
-		PA[0] = new Pikachu();
-		PA[1] = new Bulbasaur();
-		PA[2] = new Charmander();
-		PA[3] = new Onix();
-		PA[4] = new Graveler();
-		PA[5] = new Pidgeotto();
-		PB[0] = new Raichu();
-		PB[1] = new Onix();
-		PB[2] = new Pikachu();
-		PB[3] = new Raichu();
-		PB[4] = new Bulbasaur();
-		PB[5] = new Graveler();
+		Pokemon[] PA1 = new Pokemon[6];
+		Pokemon[] PB1 = new Pokemon[6];
+		PA1[0] = new Pikachu();
+		PA1[1] = new Bulbasaur();
+		PA1[2] = new Charmander();
+		PA1[3] = new Onix();
+		PA1[4] = new Graveler();
+		PA1[5] = new Pidgeotto();
+		PB1[0] = new Raichu();
+		PB1[1] = new Onix();
+		PB1[2] = new Pikachu();
+		PB1[3] = new Raichu();
+		PB1[4] = new Bulbasaur();
+		PB1[5] = new Graveler();
 
+		Pokemon[] PA2 = new Pokemon[6];
+		Pokemon[] PB2 = new Pokemon[6];
+		PA2[0] = new Ninetales();
+		PA2[1] = new Cyndaquil();
+		PA2[2] = new Charmander();
+		PA2[3] = new Onix();
+		PA2[4] = new Graveler();
+		PA2[5] = new Pidgeotto();
+		PB2[0] = new Raichu();
+		PB2[1] = new Onix();
+		PB2[2] = new Pikachu();
+		PB2[3] = new Raichu();
+		PB2[4] = new Bulbasaur();
+		PB2[5] = new Graveler();
 		
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();
@@ -138,7 +161,8 @@ public class Batalha {
 		*/
 		
 		
-		iniciarBatalha (T1, T2, PA, PB);
+		iniciarBatalha (T1, T2, PA1, PB1);
+		iniciarBatalha (T1, T2, PA2, PB2);
 		//TESTAR HEAL 
 		
 	}

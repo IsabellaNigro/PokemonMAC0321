@@ -10,16 +10,14 @@ public class Trash extends Treinador {
 	public void trocarpokemon() {
 		System.out.println("Trash trocou seu Pokemón!");
 	}
-	public void usaritem() {
+	public void usaritem(Pokemon P) {
 		System.out.println("Trash usou um item de cura!");
+		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 < P.getHPmax())
+			P.SetHP(25);
 	}
 	public void fugir() {
 		System.out.println("Trash fugiu da batalha!");
 	}
-	/*
-	public int getHP(Pokemon escolhido) {
-		return escolhido.getHPPokemon();
-	}
-	*/
+	
 	
 }

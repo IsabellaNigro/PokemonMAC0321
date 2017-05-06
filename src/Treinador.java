@@ -15,9 +15,9 @@ abstract class Treinador {
 	}
 	abstract void atacar(int num,Pokemon inimigo);
 	abstract void trocarpokemon();
-	abstract void usaritem();
+	abstract void usaritem(Pokemon P);
 	abstract void fugir();
-	//abstract int getHP(Pokemon escolhido);
+	
 	
 	public String getNomeTreinador() {
 		return treinador;
@@ -27,9 +27,6 @@ abstract class Treinador {
 		return numpokemons;
 	}
 	
-	//public String getNomePokemon (int a) {
-	//	return this.pokemon[a];
-	//}
 	
 	public void listaNomePokemon(int a, int numerodemortos) {
 		for (int i=numerodemortos; i<a-1; i++)
@@ -38,4 +35,6 @@ abstract class Treinador {
 			System.out.println(pokemon[a-1]);
 		else System.out.println("não há mais pokemóns!");
 	}
+	
+	
 }

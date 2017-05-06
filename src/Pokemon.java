@@ -10,9 +10,12 @@ abstract class Pokemon {
 	private int dano[] = new int[4];
 	//cada pokemon tem um tipo
 	private String tipo;
+	//guardando o maximo de HP do pokemon
+	private int HPmax;
 	//construtor
 	Pokemon(String nome, int HP, String tipo, String ataque[], int dano[]){
 		this.nome = nome;
+		this.HPmax = HP;
 		this.HP = HP;
 		this.tipo = tipo;
 		this.ataque[0] = ataque[0];
@@ -30,6 +33,10 @@ abstract class Pokemon {
 	
 	public int getHPPokemon(){
 		return HP;
+	}
+	
+	public int getHPmax(){
+		return HPmax;
 	}
 	//metodo para adicionar ou retirar HP de acordo com a batalha
 	public int SetHP(int HP){
@@ -73,7 +80,7 @@ abstract class Pokemon {
 		}
 	}
 	
-	//FAZER FUNCAO PRA CHECAR SE ESTA VIVO
+	//FUNCAO PRA CHECAR SE ESTA VIVO
 	public boolean vivoOuMorto(){
 		if (HP>0){
 			return true;

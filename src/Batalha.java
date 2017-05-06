@@ -101,21 +101,14 @@ public class Batalha {
 			}
 		}
 		if (i==A.getNumPokemons()) {
-			System.out.println("Trash venceu a batalha!!");
-			System.out.println("-------------------------------------------------");
-			System.out.println();
-			System.out.println();
+			System.out.println(A.getNomeTreinador()+" venceu a batalha!!");
 		}
 		if (j==B.getNumPokemons()) {
-			System.out.println("Ash venceu a batalha!!");
-			System.out.println("-------------------------------------------------");
-			System.out.println();
-			System.out.println();
+			System.out.println(B.getNomeTreinador()+" venceu a batalha!!");
 		}
-
-		
-		
-		
+		System.out.println("-----------------------------------------------------------------------------------------");
+		System.out.println();
+		System.out.println();
 	}
 	
 
@@ -139,9 +132,9 @@ public class Batalha {
 		Pokemon[] PB2 = new Pokemon[6];
 		PA2[0] = new Ninetales();
 		PA2[1] = new Cyndaquil();
-		PA2[2] = new Charmander();
-		PA2[3] = new Onix();
-		PA2[4] = new Graveler();
+		PA2[2] = new Dratini();
+		PA2[3] = new Totodile();
+		PA2[4] = new Squirtle();
 		PA2[5] = new Pidgeotto();
 		PB2[0] = new Raichu();
 		PB2[1] = new Onix();
@@ -152,6 +145,8 @@ public class Batalha {
 		
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();
+		Brock T3 = new Brock ();
+		James T4 = new James ();
 		/*
 		Pikachu P1 = new Pikachu ();
 		Bulbasaur P2 = new Bulbasaur();
@@ -162,7 +157,7 @@ public class Batalha {
 		
 		
 		iniciarBatalha (T1, T2, PA1, PB1);
-		iniciarBatalha (T1, T2, PA2, PB2);
+		iniciarBatalha (T3, T4, PA2, PB2);
 		//TESTAR HEAL 
 		
 	}

@@ -46,28 +46,28 @@ abstract class Pokemon {
 		
 	}
 	public void pokemonAtaca(int num, Pokemon inimigo){
-		if (num == 0){
+		if (num == 1){
 			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num-1]))+" de HP");
 			else
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" ficou com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 
 		}
-		if (num == 1){
-			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
-			else
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
-		}
 		if (num == 2){
 			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num-1]))+" de HP");
 			else
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 		}
 		if (num == 3){
 			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num-1]))+" de HP");
+			else
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
+		}
+		if (num == 4){
+			if (inimigo.getHPPokemon()-dano[num]>0)
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num-1]))+" de HP");
 			else
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 		}

@@ -3,15 +3,21 @@ public class Batalha {
 	static int numdemortosA=0;
 	static int numdemortosB=0;
 	public static void listarPokemonsDoTreinadorA(Treinador A, Pokemon PA){
-		System.out.println("O treinador "+A.getNomeTreinador()+" possui "+A.getNumPokemons()+" pokemóns!");
-		System.out.print("Os pokemóns de "+A.getNomeTreinador()+" são: ");
-		A.listaNomePokemon(A.getNumPokemons(), numdemortosA);
+		if (A.getNumPokemons()>0) {
+			System.out.println("O treinador "+A.getNomeTreinador()+" possui "+A.getNumPokemons()+" pokemóns!");
+			System.out.print("Os pokemóns de "+A.getNomeTreinador()+" são: ");
+			A.listaNomePokemon(A.getNumPokemons(), numdemortosA);
+		}
+		else System.out.println("O treinador "+A.getNomeTreinador()+" não tem pokemóns!!!");
 	}
 	
 	public static void listarPokemonsDoTreinadorB(Treinador B, Pokemon PB){
-		System.out.println("O treinador "+B.getNomeTreinador()+" possui "+B.getNumPokemons()+" pokemóns!");
-		System.out.print("Os pokemóns de "+B.getNomeTreinador()+" são: ");
-		B.listaNomePokemon(B.getNumPokemons(), numdemortosB);
+		if (B.getNumPokemons()>0) {
+			System.out.println("O treinador "+B.getNomeTreinador()+" possui "+B.getNumPokemons()+" pokemóns!");
+			System.out.print("Os pokemóns de "+B.getNomeTreinador()+" são: ");
+			B.listaNomePokemon(B.getNumPokemons(), numdemortosB);
+		}
+		else System.out.println("O treinador "+B.getNomeTreinador()+" não tem pokemóns!!!");
 	}
 	
 	public static void numDePokemonsMortosDeA(){
@@ -29,38 +35,37 @@ public class Batalha {
 		System.out.println("O pokemón escolhido foi: "+B.getNomePokemon(0)+" e seu HP é: "+B.getHP(PB));
 	}
 	
-	public static void Batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
+	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(0)+"!");
 		System.out.println("O treinador irá usar "+PA.imprimeAtaque(1));
 		PA.pokemonAtaca(1, PB);
-		if (PB.vivoOuMorto()==false) {
-			B.setNumPokemons();
-			numDePokemonsMortosDeB();
-			listarPokemonsDoTreinadorB(B, PB);
-		}
+		vivoOuMorto(A, B, PA, PB);
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+B.getNomePokemon(0)+"!");
 		System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
 		PB.pokemonAtaca(1, PA);
-		if (PA.vivoOuMorto()==false) {
-			A.setNumPokemons();
-			numDePokemonsMortosDeA();
-			listarPokemonsDoTreinadorA(A, PA);
-		}
-
+		vivoOuMorto(A, B, PA, PB);
 	}
 	
 	public static void vivoOuMorto(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
-		
+		if (PB.vivoOuMorto()==false) {
+			numDePokemonsMortosDeB();
+			listarPokemonsDoTreinadorB(B, PB);
+		}
+		if (PA.vivoOuMorto()==false) {
+			numDePokemonsMortosDeA();
+			listarPokemonsDoTreinadorA(A, PA);
+		}
 	}
+	
 	public static void iniciarBatalha (Treinador A, Treinador B, Pokemon PA, Pokemon PB) {
 		System.out.println("A batalha Pokemón entre "+A.getNomeTreinador()+" e "+B.getNomeTreinador()+" irá começar!");
 		listarPokemonsDoTreinadorA(A, PA);
 		listarPokemonsDoTreinadorB(B, PB);
 		escolhasDePokemons(A, B, PA, PB);
-		Batalha(A, B, PA, PB);
+		batalha(A, B, PA, PB);
+		
 	}
 
-	
 	public static void main(String[] args) {
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();
@@ -70,6 +75,8 @@ public class Batalha {
 		Onix P4 = new Onix ();
 		Graveler P5 = new Graveler(); 
 		iniciarBatalha (T1, T2, P1, P2);
+		//iniciarBatalha (T1, T2, P3, P4);
+
 		//TESTAR HEAL 
 		
 	}

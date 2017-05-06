@@ -2,6 +2,7 @@
 public class Batalha {
 	static int numdemortosA=0;
 	static int numdemortosB=0;
+	
 	public static void listarPokemonsDoTreinadorA(Treinador A, Pokemon PA){
 		//so listamos os pokemons de A se o treinador ainda tiver pokemons vivos
 		if (A.getNumPokemons()>0) {
@@ -42,7 +43,7 @@ public class Batalha {
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+A.getNomePokemon(0)+"!");
 		System.out.println("O treinador irá usar "+PA.imprimeAtaque(1));
-		PA.pokemonAtaca(1, PB);
+		PA.pokemonAtaca(1, PB); 
 		//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 		vivoOuMorto(A, B, PA, PB); 
 		//CRIAR CHECAGEM DE CONDICAO PARA CONTINUAR A BATALHA DPS DOS ATAQUES 
@@ -74,6 +75,21 @@ public class Batalha {
 	}
 
 	public static void main(String[] args) {
+		Pokemon[] PokdeA = new Pokemon[6];
+		Pokemon[] PokdeB = new Pokemon[1];
+		PokdeA[0] = new Pikachu();
+		PokdeA[1] = new Bulbasaur();
+		PokdeA[2] = null;
+		PokdeA[3] = null;
+		PokdeA[4] = null;
+		PokdeA[5] = null;
+		PokdeA[0] = new Bulbasaur();
+		PokdeA[1] = new Pikachu();
+		PokdeA[2] = null;
+		PokdeA[3] = new Onix();
+		PokdeA[4] = new Graveler();
+		PokdeA[5] = null;
+		
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();
 		Pikachu P1 = new Pikachu ();
@@ -81,7 +97,7 @@ public class Batalha {
 		Charmander P3 = new Charmander();
 		Onix P4 = new Onix ();
 		Graveler P5 = new Graveler(); 
-		iniciarBatalha (T1, T2, P1, P2);
+		//iniciarBatalha (T1, T2, P1, P2);
 		//iniciarBatalha (T1, T2, P3, P4);
 
 		//TESTAR HEAL 

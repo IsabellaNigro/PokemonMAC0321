@@ -99,7 +99,7 @@ public class Batalha {
 		System.out.println();
 		listarPokemonsDoTreinadorA(A);
 		listarPokemonsDoTreinadorB(B);
-		int i=0, j=0, k=0;
+		int i=0, j=0;
 		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
 			if (PA[i].getHPPokemon()<=0){
 				// se o pokemon atual morreu vai pro proximo 

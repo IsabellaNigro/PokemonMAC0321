@@ -37,12 +37,14 @@ public class Batalha {
 	
 	//o metodo imprime os pokemons escolhidos e seus HPs
 	public static void escolhasDePokemons(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
-		System.out.println("O treinador "+A.getNomeTreinador()+" irá escolher seu pokemón!");
-		System.out.println("O pokemón escolhido foi: "+PA.getNomePokemon()+" e seu HP é: "+PA.getHPPokemon());
-		System.out.println();
-		System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu pokemón!");
-		System.out.println("O pokemón escolhido foi: "+PB.getNomePokemon()+" e seu HP é: "+PB.getHPPokemon());
-		System.out.println();
+		if (numdemortosA < A.getNumPokemons() && numdemortosB < B.getNumPokemons() ){
+			System.out.println("O treinador "+A.getNomeTreinador()+" irá escolher seu pokemón!");
+			System.out.println("O pokemón escolhido foi: "+PA.getNomePokemon()+" e seu HP é: "+PA.getHPPokemon());
+			System.out.println();
+			System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu pokemón!");
+			System.out.println("O pokemón escolhido foi: "+PB.getNomePokemon()+" e seu HP é: "+PB.getHPPokemon());
+			System.out.println();
+		}
 	}
 	
 	//metodo que sera chamado enquanto houver batalha 
@@ -54,7 +56,6 @@ public class Batalha {
 		//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 		vivoOuMorto(A, B, PA, PB);
 		System.out.println();
-		//CRIAR CHECAGEM DE CONDICAO PARA CONTINUAR A BATALHA DPS DOS ATAQUES
 		if (PB.vivoOuMorto() == true){
 			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 			System.out.println("O treinador irá usar "+PB.imprimeAtaque(1));
@@ -84,22 +85,22 @@ public class Batalha {
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0, k=0;
 		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
-			if (PA[i].getHPPokemon()<=0 && i<6){
+			if (PA[i].getHPPokemon()<=0){
 				// se o pokemon atual morreu vai pro proximo 
 				i++; //System.out.println("chegou1"+ i);
 			}
 				
-			if (PB[j].getHPPokemon()<=0 && j<6){ // se o pokemon atual morreu vai pro proximo 
+			if (PB[j].getHPPokemon()<=0){ // se o pokemon atual morreu vai pro proximo 
 				j++; //System.out.println("chegou2" +j);
-			}	
-			if (i<=5 && j<=5) {
+			}
+			if (i<A.getNumPokemons() && j<B.getNumPokemons()) {
 				escolhasDePokemons(A, B, PA[i], PB[j]); //MUDAR O treinador Trash irá escolher seu pokemón!O pokemón escolhido foi: Raichu e seu HP é: 100
 				batalha(A, B, PA[i], PB[j]);
 			}
 		}
-		if (i==6)
+		if (i==A.getNumPokemons())
 			System.out.println("Trash venceu a batalha!!");
-		if (j==6)
+		if (j==B.getNumPokemons())
 			System.out.println("Ash venceu a batalha!!");
 		
 		

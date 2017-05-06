@@ -38,10 +38,10 @@ public class Batalha {
 	//o metodo imprime os pokemons escolhidos e seus HPs
 	public static void escolhasDePokemons(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		System.out.println("O treinador "+A.getNomeTreinador()+" irá escolher seu pokemón!");
-		System.out.println("O pokemón escolhido foi: "+A.getNomePokemon(0)+" e seu HP é: "+A.getHP(PA));
+		System.out.println("O pokemón escolhido foi: "+A.getNomePokemon(0)+" e seu HP é: "+PA.getHPPokemon());
 		System.out.println();
 		System.out.println("O treinador "+B.getNomeTreinador()+" irá escolher seu pokemón!");
-		System.out.println("O pokemón escolhido foi: "+B.getNomePokemon(0)+" e seu HP é: "+B.getHP(PB));
+		System.out.println("O pokemón escolhido foi: "+B.getNomePokemon(0)+" e seu HP é: "+PB.getHPPokemon());
 		System.out.println();
 	}
 	

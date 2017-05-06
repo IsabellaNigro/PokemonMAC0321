@@ -16,8 +16,10 @@ public class Trash extends Treinador {
 	public void fugir() {
 		System.out.println("Trash fugiu da batalha!");
 	}
+	/*
 	public int getHP(Pokemon escolhido) {
 		return escolhido.getHPPokemon();
 	}
+	*/
 	
 }

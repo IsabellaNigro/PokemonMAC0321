@@ -33,7 +33,7 @@ abstract class Pokemon {
 	}
 	//metodo para adicionar ou retirar HP de acordo com a batalha
 	public int SetHP(int HP){
-		this.HP += HP;
+		this.HP = this.HP + HP;
 		return this.HP; 
 	}
 	//metodo para imprimir os ataques
@@ -46,28 +46,28 @@ abstract class Pokemon {
 		
 	}
 	public void pokemonAtaca(int num, Pokemon inimigo){
-		if (num == 1){
+		if (num == 0){
 			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
 			else
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" ficou com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 
 		}
+		if (num == 1){
+			if (inimigo.getHPPokemon()-dano[num]>0)
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
+			else
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
+		}
 		if (num == 2){
 			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
 			else
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 		}
 		if (num == 3){
 			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
-			else
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
-		}
-		if (num == 4){
-			if (inimigo.getHPPokemon()-dano[num]>0)
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-dano[num])+" de HP");
+				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num]))+" de HP");
 			else
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 		}
@@ -75,7 +75,9 @@ abstract class Pokemon {
 	
 	//FAZER FUNCAO PRA CHECAR SE ESTA VIVO
 	public boolean vivoOuMorto(){
-		if (HP>0) return true;
+		if (HP>0){
+			return true;
+		}
 		else return false;
 	}
 }

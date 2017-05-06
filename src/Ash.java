@@ -17,7 +17,9 @@ public class Ash extends Treinador {
 	public void fugir() {
 		System.out.println("Ash fugiu da batalha!");
 	}
+	/*
 	public int getHP(Pokemon escolhido) {
 		return escolhido.getHPPokemon();
 	}
+	*/
 }

@@ -84,15 +84,18 @@ public class Batalha {
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0;
 		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
-			if (PA[i].getHPPokemon()<0) // se o pokemon atual morreu vai pro proximo 
-				i++;
-			if (PB[j].getHPPokemon()<0) // se o pokemon atual morreu vai pro proximo 
-				j++;
+			if (PA[i].getHPPokemon()<0){
+				// se o pokemon atual morreu vai pro proximo 
+				i++; System.out.println("chegou1"+ i);
+			}
 				
+			if (PB[j].getHPPokemon()<0){ // se o pokemon atual morreu vai pro proximo 
+				j++; System.out.println("chegou2" +j);
+			}	
 			escolhasDePokemons(A, B, PA[i], PB[j]); //MUDAR O treinador Trash irá escolher seu pokemón!O pokemón escolhido foi: Raichu e seu HP é: 100
 			batalha(A, B, PA[i], PB[j]);
-			//i++;
-			//j++;
+			i++;
+			j++;
 		}
 		
 		

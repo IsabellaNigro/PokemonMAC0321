@@ -115,16 +115,16 @@ public class Batalha {
 		Pokemon[] PB = new Pokemon[6];
 		PA[0] = new Pikachu();
 		PA[1] = new Bulbasaur();
-		PA[2] = null;
-		PA[3] = null;
-		PA[4] = null;
-		PA[5] = null;
+		PA[2] = new Charmander();
+		PA[3] = new Onix();
+		PA[4] = new Graveler();
+		PA[5] = new Pidgeotto();
 		PB[0] = new Raichu();
 		PB[1] = new Onix();
 		PB[2] = new Pikachu();
-		PB[3] = new Bulbasaur();
-		PB[4] = new Graveler();
-		PB[5] = null;
+		PB[3] = new Raichu();
+		PB[4] = new Bulbasaur();
+		PB[5] = new Graveler();
 
 		
 		Ash T1 = new Ash ();

@@ -18,7 +18,7 @@ public class Brock extends Treinador {
 	}
 	*/
 	
-	public void usaritem(Pokemon P) {
+	public boolean usaritem(Pokemon P) {
 		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 <= P.getHPmax()){
 			System.out.println("Brock usou um item de cura!");
 			P.SetHP(25);
@@ -27,11 +27,14 @@ public class Brock extends Treinador {
 		else if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 > P.getHPmax()){
 			System.out.println("Brock tentou usar um item de cura");
 			System.out.println("Brock não pode usar um item de cura pois a vida do pokemón já está alta!");
+			return false;
 		}
 		else if (P.vivoOuMorto() != true){
 			System.out.println("Brock tentou usar um item de cura");
 			System.out.println("Brock não pode usar um item de cura pois o pokemón está morto!");
+			return false;
 		}
+		return true;
 	}
 	
 	

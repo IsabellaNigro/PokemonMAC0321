@@ -17,7 +17,7 @@ abstract class Treinador {
 	}
 	abstract void atacar(int num,Pokemon inimigo);
 	abstract void trocarpokemon();
-	abstract void usaritem(Pokemon P);
+	abstract boolean usaritem(Pokemon P);
 	//abstract void fugir();
 	
 	

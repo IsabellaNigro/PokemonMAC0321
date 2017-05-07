@@ -36,5 +36,9 @@ abstract class Treinador {
 		else System.out.println("não há mais pokemóns!");
 	}
 	
+	// devolve o valor de i, sendo P[i] o pokemon que ainda esta vivo e foi trocado
+	public void trocarPokemonAtual(Pokemon Atual, Pokemon Novo) {
+		System.out.println("O pokemón "+Atual.getNomePokemon()+" foi trocado pelo pokemón "+Novo.getNomePokemon());
+	}
 	
 }

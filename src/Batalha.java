@@ -69,6 +69,7 @@ public class Batalha {
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 			vivoOuMorto(A, B, PA, PB);
 			B.usaritem(PB);
+			
 		}
 		System.out.println();
 		if (PB.vivoOuMorto() == true){
@@ -104,7 +105,7 @@ public class Batalha {
 		int i=0, j=0;
 		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
 			if (PA[i].getHPPokemon()<=0){
-				// se o pokemon atual morreu vai pro proximo 
+				//se o pokemon atual morreu vai pro proximo 
 				i++; //System.out.println("chegou1"+ i);
 			}
 				
@@ -112,7 +113,7 @@ public class Batalha {
 				j++; //System.out.println("chegou2" +j);
 			}
 			if (i<A.getNumPokemons() && j<B.getNumPokemons()) {
-				escolhasDePokemons(A, B, PA[i], PB[j]); //MUDAR O treinador Trash irá escolher seu pokemón!O pokemón escolhido foi: Raichu e seu HP é: 100
+				escolhasDePokemons(A, B, PA[i], PB[j]); 
 				batalha(A, B, PA[i], PB[j]);
 			}
 		}
@@ -165,23 +166,10 @@ public class Batalha {
 		Trash T2 = new Trash ();
 		Brock T3 = new Brock ();
 		James T4 = new James ();
-		/*
-		Pikachu P1 = new Pikachu ();
-		Bulbasaur P2 = new Bulbasaur();
-		Charmander P3 = new Charmander();
-		Onix P4 = new Onix ();
-		Graveler P5 = new Graveler(); 
-		*/
-		
-		
+
 		iniciarBatalha (T1, T2, PA1, PB1);
 		iniciarBatalha (T3, T4, PA2, PB2);
-		//TESTAR HEAL 
-		
 
-
-		
-		
 		
 	}
 }

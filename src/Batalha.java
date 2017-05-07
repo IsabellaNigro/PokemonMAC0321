@@ -60,7 +60,7 @@ public class Batalha {
 	
 	//metodo que sera chamado enquanto houver batalha 
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
-		int numerodoataque=gerarAtaqueRandomico();
+		int numerodoataque=gerarAtaqueRandomico(), variaveldecura=gerarAtaqueRandomico();
 		if (PA.vivoOuMorto() == true){
 			System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 			System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
@@ -68,6 +68,7 @@ public class Batalha {
 			PA.pokemonAtaca(numerodoataque, PB); 
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 			vivoOuMorto(A, B, PA, PB);
+			B.usaritem(PB);
 		}
 		System.out.println();
 		if (PB.vivoOuMorto() == true){
@@ -76,6 +77,7 @@ public class Batalha {
 			System.out.println();
 			PB.pokemonAtaca(numerodoataque, PA);
 			vivoOuMorto(A, B, PA, PB);
+			A.usaritem(PA);
 		}
 		System.out.println();
 	}

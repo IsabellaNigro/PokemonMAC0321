@@ -72,6 +72,7 @@ public class Batalha {
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB, int i, int j){ // i e j guardam a posicao do pokemon atual
 		int numerodoataque=gerarAtaqueRandomico();
 		int variaveldeacao =gerarAcaoRandomico();
+		System.out.println("AS VARIAVEIS SAOOOOOOOOOOO    "+variaveldeacao);
 		if (PA.vivoOuMorto() == true && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true){
 			if (variaveldeacao>=1 && variaveldeacao<=59){
 				System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
@@ -82,12 +83,12 @@ public class Batalha {
 				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61 )
-				//B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90 )
 				B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
-				//B.trocarpokemon();
-				//B.setTrocarPokemon(true);
+				B.trocarpokemon();
+				B.setTrocarPokemon(true);
 			}
 		}
 		System.out.println();
@@ -101,12 +102,12 @@ public class Batalha {
 				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61)
-				//A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90)
 				A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
-				//A.trocarpokemon();
-				//A.setTrocarPokemon(true);
+				A.trocarpokemon();
+				A.setTrocarPokemon(true);
 			}
 
 		}

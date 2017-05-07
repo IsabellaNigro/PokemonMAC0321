@@ -34,7 +34,6 @@ abstract class Treinador {
 		boolean todosmortos=true;
 		for (int i=0; i<a-1; i++) {
 			if (pokemon[i]!=null) {
-				System.out.println("EBTRIYDSADJISADJSADISAJIDSIADJSADJISJDIADIASJDSAIJ");
 				todosmortos=false;
 				System.out.print(pokemon[i]+", ");
 			}

@@ -14,9 +14,11 @@ public class James extends Treinador {
 	public void usaritem() {
 		System.out.println("James usou um item de cura!");
 	}
+	/*
 	public void fugir() {
 		System.out.println("James fugiu da batalha!");
 	}
+	*/
 	
 	public void usaritem(Pokemon P) {
 		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 <= P.getHPmax()){

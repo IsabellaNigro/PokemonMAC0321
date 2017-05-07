@@ -61,26 +61,36 @@ public class Batalha {
 	//metodo que sera chamado enquanto houver batalha 
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
 		int numerodoataque=gerarAtaqueRandomico(), variaveldecura=gerarAtaqueRandomico();
-		if (PA.vivoOuMorto() == true){
+		if (PA.vivoOuMorto() == true && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true){
 			System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 			System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
 			System.out.println();
 			PA.pokemonAtaca(numerodoataque, PB); 
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 			vivoOuMorto(A, B, PA, PB);
-			B.usaritem(PB);
-			
+			B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+			B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 		}
 		System.out.println();
-		if (PB.vivoOuMorto() == true){
+		if (PB.vivoOuMorto() == true && B.getContinuaBatalha()==true && A.getContinuaBatalha()==true){
 			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 			System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
 			System.out.println();
 			PB.pokemonAtaca(numerodoataque, PA);
 			vivoOuMorto(A, B, PA, PB);
+			A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			A.usaritem(PA);
 		}
 		System.out.println();
+		
+		if (A.getContinuaBatalha()==false) {
+			System.out.println("O treinador "+A.getNomeTreinador()+" fugiu!");
+			System.out.println("O treinador "+B.getNomeTreinador()+" venceu a batalha!!");
+		}
+		if (B.getContinuaBatalha()==false) {
+			System.out.println("O treinador "+B.getNomeTreinador()+" fugiu!");
+			System.out.println("O treinador "+A.getNomeTreinador()+" venceu a batalha!!");
+		}
 	}
 	
 
@@ -103,7 +113,7 @@ public class Batalha {
 		listarPokemonsDoTreinadorA(A);
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0;
-		while (i<A.getNumPokemons() && j<B.getNumPokemons()) {
+		while (i<A.getNumPokemons() && j<B.getNumPokemons() && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true) {
 			if (PA[i].getHPPokemon()<=0){
 				//se o pokemon atual morreu vai pro proximo 
 				i++; //System.out.println("chegou1"+ i);

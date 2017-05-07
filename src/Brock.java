@@ -14,9 +14,11 @@ public class Brock extends Treinador {
 	public void usaritem() {
 		System.out.println("Brock usou um item de cura!");
 	}
+	/*
 	public void fugir() {
 		System.out.println("Brock fugiu da batalha!");
 	}
+	*/
 	
 	public void usaritem(Pokemon P) {
 		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 <= P.getHPmax()){

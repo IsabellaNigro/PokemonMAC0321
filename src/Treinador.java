@@ -3,6 +3,7 @@ abstract class Treinador {
 	private int numpokemons;  //todos os treinadores possuem um certo numero de pokemons
 	private String[] pokemon = new String[6];  //nomes dos pokemons de cada treinador
 	private String treinador;  //nome do treinador
+	private boolean continuaBatalha=true;
 	public Treinador (String treinador, int numpokemons, String pokemon[]) {
 		this.treinador=treinador;
 		this.numpokemons=numpokemons;
@@ -16,7 +17,7 @@ abstract class Treinador {
 	abstract void atacar(int num,Pokemon inimigo);
 	abstract void trocarpokemon();
 	abstract void usaritem(Pokemon P);
-	abstract void fugir();
+	//abstract void fugir();
 	
 	
 	public String getNomeTreinador() {
@@ -34,6 +35,14 @@ abstract class Treinador {
 		if (a!=numerodemortos)
 			System.out.println(pokemon[a-1]);
 		else System.out.println("não há mais pokemóns!");
+	}
+	
+	public boolean getContinuaBatalha() {
+		return continuaBatalha;
+	}
+	
+	public boolean setContinuaBatalha() {
+		return continuaBatalha=false;
 	}
 	
 	// devolve o valor de i, sendo P[i] o pokemon que ainda esta vivo e foi trocado

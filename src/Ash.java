@@ -18,9 +18,10 @@ public class Ash extends Treinador {
 			System.out.println("O pokemón " +P.getNomePokemon()+" recebeu 25 de HP e ficou com "+ P.getHPPokemon()+"/"+P.getHPmax()+" de HP");
 		}
 	}
+	/*
 	public void fugir() {
 		System.out.println("Ash fugiu da batalha!");
 	}
-	
+	*/
 	
 }

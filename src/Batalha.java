@@ -82,9 +82,8 @@ public class Batalha {
 				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61 )
-				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90 ) {
-				//B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 				if (A.usaritem(PA)==false) {
 					System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 					System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
@@ -92,10 +91,11 @@ public class Batalha {
 					PA.pokemonAtaca(numerodoataque, PB); 
 					vivoOuMorto(A, B, PA, PB, i, j);
 				}
+				
 			}
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
-				B.trocarpokemon();
-				B.setTrocarPokemon(true);
+				A.trocarpokemon();
+				A.setTrocarPokemon(true);
 			}
 		}
 		System.out.println();
@@ -109,9 +109,8 @@ public class Batalha {
 				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61)
-				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90) {
-				//A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 				if (B.usaritem(PB)==false) {
 					System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 					System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
@@ -121,8 +120,8 @@ public class Batalha {
 				}
 			}
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
-				A.trocarpokemon();
-				A.setTrocarPokemon(true);
+				B.trocarpokemon();
+				B.setTrocarPokemon(true);
 			}
 
 		}
@@ -161,6 +160,7 @@ public class Batalha {
 		listarPokemonsDoTreinadorB(B);
 		int i=0, j=0;
 		for (int k=0; k<6; k++) {
+			i=0; j=0;
 			while (i<A.getNumPokemons() && j<B.getNumPokemons() && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true) {
 				if (PA[i].getHPPokemon()<=0 || A.getTrocarPokemon()==true){
 					//se o pokemon atual morreu vai pro proximo 

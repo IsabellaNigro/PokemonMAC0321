@@ -72,7 +72,6 @@ public class Batalha {
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB, int i, int j){ // i e j guardam a posicao do pokemon atual
 		int numerodoataque=gerarAtaqueRandomico();
 		int variaveldeacao =gerarAcaoRandomico();
-		System.out.println("AS VARIAVEIS SAOOOOOOOOOOO    "+variaveldeacao);
 		if (PA.vivoOuMorto() == true && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true){
 			if (variaveldeacao>=1 && variaveldeacao<=59){
 				System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
@@ -86,8 +85,13 @@ public class Batalha {
 				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90 ) {
 				//B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
-				if (B.usaritem(PB)==false)
-					PB.pokemonAtaca(numerodoataque, PA); 
+				if (A.usaritem(PA)==false) {
+					System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
+					System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
+					System.out.println();
+					PA.pokemonAtaca(numerodoataque, PB); 
+					vivoOuMorto(A, B, PA, PB, i, j);
+				}
 			}
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
 				B.trocarpokemon();
@@ -108,8 +112,13 @@ public class Batalha {
 				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90) {
 				//A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
-				if (A.usaritem(PA)==false)
-					PA.pokemonAtaca(numerodoataque, PB); 
+				if (B.usaritem(PB)==false) {
+					System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
+					System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
+					System.out.println();
+					PB.pokemonAtaca(numerodoataque, PA); 
+					vivoOuMorto(A, B, PA, PB, i, j);
+				}
 			}
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
 				A.trocarpokemon();

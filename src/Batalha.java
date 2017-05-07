@@ -37,6 +37,16 @@ public class Batalha {
 	    i+=min;
 	    return i;
 	}
+	
+	public static int gerarAcaoRandomico() {
+		int max=100;
+	    int min=1;
+	    int diff=max-min;
+	    Random rn = new Random();
+	    int i = rn.nextInt(diff+1);
+	    i+=min;
+	    return i;
+	}
 	// guardamos o numero de pokemons mortos de cada treinador para saber quando trocar ou terminar a batalha
 	public static void numDePokemonsMortosDeA(){
 		numdemortosA++;
@@ -60,26 +70,36 @@ public class Batalha {
 	
 	//metodo que sera chamado enquanto houver batalha 
 	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
-		int numerodoataque=gerarAtaqueRandomico(), variaveldecura=gerarAtaqueRandomico();
+		int numerodoataque=gerarAtaqueRandomico();
+		int variaveldeacao =gerarAcaoRandomico();
 		if (PA.vivoOuMorto() == true && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true){
-			System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
-			System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
-			System.out.println();
-			PA.pokemonAtaca(numerodoataque, PB); 
+			if (variaveldeacao>=11 && variaveldeacao<=50){
+				System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
+				System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
+				System.out.println();
+				PA.pokemonAtaca(numerodoataque, PB); 
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
-			vivoOuMorto(A, B, PA, PB);
-			B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
-			B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
+				vivoOuMorto(A, B, PA, PB);
+			}
+			if (variaveldeacao==1 || variaveldeacao==2 )
+				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+			if (variaveldeacao>=4 && variaveldeacao<=10 )
+				B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 		}
 		System.out.println();
+		variaveldeacao =gerarAcaoRandomico();
 		if (PB.vivoOuMorto() == true && B.getContinuaBatalha()==true && A.getContinuaBatalha()==true){
-			System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
-			System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
-			System.out.println();
-			PB.pokemonAtaca(numerodoataque, PA);
-			vivoOuMorto(A, B, PA, PB);
-			A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
-			A.usaritem(PA);
+			if(variaveldeacao>=11 && variaveldeacao<=50){
+				System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
+				System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
+				System.out.println();
+				PB.pokemonAtaca(numerodoataque, PA);
+				vivoOuMorto(A, B, PA, PB);
+			}
+			if (variaveldeacao==1 || variaveldeacao==2)
+				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+			if (variaveldeacao>=4 && variaveldeacao<=10 )
+				A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 		}
 		System.out.println();
 		

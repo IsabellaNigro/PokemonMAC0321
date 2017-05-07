@@ -30,12 +30,19 @@ abstract class Treinador {
 	}
 	
 	
-	public void listaNomePokemon(int a, int numerodemortos) {
-		for (int i=numerodemortos; i<a-1; i++)
-			System.out.print(pokemon[i]+", ");
-		if (a!=numerodemortos)
+	public void listaNomePokemon(int a) {
+		boolean todosmortos=true;
+		for (int i=0; i<a-1; i++) {
+			if (pokemon[i]!=null) {
+				System.out.println("EBTRIYDSADJISADJSADISAJIDSIADJSADJISJDIADIASJDSAIJ");
+				todosmortos=false;
+				System.out.print(pokemon[i]+", ");
+			}
+		}
+		if (pokemon[a-1]!=null) 
 			System.out.println(pokemon[a-1]);
-		else System.out.println("não há mais pokemóns!");
+			else if (todosmortos==true)
+			System.out.println("não há mais pokemóns!");
 	}
 	
 	public boolean getContinuaBatalha() {
@@ -52,6 +59,10 @@ abstract class Treinador {
 	
 	public void setTrocarPokemon(boolean a) {
 		trocarPokemon=a;
+	}
+	
+	public void setNomePokemon(int posicaodomorto) {
+		pokemon[posicaodomorto]=null;
 	}
 	
 	// devolve o valor de i, sendo P[i] o pokemon que ainda esta vivo e foi trocado

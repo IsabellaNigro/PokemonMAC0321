@@ -10,7 +10,7 @@ public class Batalha {
 			// deixei a linha de baixo com comentario pq ta dando problema (tirando mais de uma vez os mortos)
 			System.out.println("O treinador "+A.getNomeTreinador()+" possui "+(A.getNumPokemons()-numdemortosA)+" pokemóns!");
 			System.out.print("Os pokemóns de "+A.getNomeTreinador()+" são: ");
-			A.listaNomePokemon(A.getNumPokemons(), numdemortosA);  
+			A.listaNomePokemon(A.getNumPokemons());  
 			System.out.println();
 		}
 		else System.out.println("O treinador "+A.getNomeTreinador()+" não tem pokemóns!!!");
@@ -22,7 +22,7 @@ public class Batalha {
 			// deixei a linha de baixo com comentario pq ta dando problema (tirando mais de uma vez os mortos)
 			System.out.println("O treinador "+B.getNomeTreinador()+" possui "+(B.getNumPokemons()-numdemortosB)+" pokemóns!");
 			System.out.print("Os pokemóns de "+B.getNomeTreinador()+" são: ");
-			B.listaNomePokemon(B.getNumPokemons(), numdemortosB); 
+			B.listaNomePokemon(B.getNumPokemons()); 
 			System.out.println();
 		}
 		else System.out.println("O treinador "+B.getNomeTreinador()+" não tem pokemóns!!!");
@@ -69,7 +69,7 @@ public class Batalha {
 	}
 	
 	//metodo que sera chamado enquanto houver batalha 
-	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
+	public static void batalha(Treinador A, Treinador B, Pokemon PA, Pokemon PB, int i, int j){ // i e j guardam a posicao do pokemon atual
 		int numerodoataque=gerarAtaqueRandomico();
 		int variaveldeacao =gerarAcaoRandomico();
 		if (PA.vivoOuMorto() == true && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true){
@@ -79,15 +79,15 @@ public class Batalha {
 				System.out.println();
 				PA.pokemonAtaca(numerodoataque, PB); 
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
-				vivoOuMorto(A, B, PA, PB);
+				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61 )
 				//B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90 )
 				B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
-				B.trocarpokemon();
-				B.setTrocarPokemon(true);
+				//B.trocarpokemon();
+				//B.setTrocarPokemon(true);
 			}
 		}
 		System.out.println();
@@ -98,15 +98,15 @@ public class Batalha {
 				System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
 				System.out.println();
 				PB.pokemonAtaca(numerodoataque, PA);
-				vivoOuMorto(A, B, PA, PB);
+				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61)
 				//A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90)
 				A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
-				A.trocarpokemon();
-				A.setTrocarPokemon(true);
+				//A.trocarpokemon();
+				//A.setTrocarPokemon(true);
 			}
 
 		}
@@ -124,13 +124,15 @@ public class Batalha {
 	
 
 	
-	public static void vivoOuMorto(Treinador A, Treinador B, Pokemon PA, Pokemon PB){
+	public static void vivoOuMorto(Treinador A, Treinador B, Pokemon PA, Pokemon PB, int i, int j){ // i e j utilizados para retirar o pokemon do vetor (NULL)
 		if (PB.vivoOuMorto()==false) {
 			numDePokemonsMortosDeB();
+			B.setNomePokemon(j);
 			listarPokemonsDoTreinadorB(B);
 		}
 		if (PA.vivoOuMorto()==false) {
 			numDePokemonsMortosDeA();
+			A.setNomePokemon(i);
 			listarPokemonsDoTreinadorA(A);
 		}
 	}
@@ -158,16 +160,16 @@ public class Batalha {
 				}
 				if (i<A.getNumPokemons() && j<B.getNumPokemons()) {
 					escolhasDePokemons(A, B, PA[i], PB[j]); 
-					batalha(A, B, PA[i], PB[j]);
+					batalha(A, B, PA[i], PB[j], i, j);
 				}
 			}
 		}
 		
 		if (i==A.getNumPokemons()) {
-			System.out.println(A.getNomeTreinador()+" venceu a batalha!!");
+			System.out.println(B.getNomeTreinador()+" venceu a batalha!!");
 		}
 		if (j==B.getNumPokemons()) {
-			System.out.println(B.getNomeTreinador()+" venceu a batalha!!");
+			System.out.println(A.getNomeTreinador()+" venceu a batalha!!");
 		}
 		System.out.println("-----------------------------------------------------------------------------------------");
 		System.out.println();
@@ -201,12 +203,12 @@ public class Batalha {
 		PA2[3] = new Totodile();
 		PA2[4] = new Squirtle();
 		PA2[5] = new Pidgeotto();
-		PB2[0] = new Raichu();
-		PB2[1] = new Onix();
-		PB2[2] = new Pikachu();
-		PB2[3] = new Raichu();
-		PB2[4] = new Bulbasaur();
-		PB2[5] = new Graveler();
+		PB2[0] = new Pikachu();
+		PB2[1] = new Bulbasaur();
+		PB2[2] = new Charmander();
+		PB2[3] = new Onix();
+		PB2[4] = new Graveler();
+		PB2[5] = new Pidgeotto();
 		
 		Ash T1 = new Ash ();
 		Trash T2 = new Trash ();

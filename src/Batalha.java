@@ -73,7 +73,7 @@ public class Batalha {
 		int numerodoataque=gerarAtaqueRandomico();
 		int variaveldeacao =gerarAcaoRandomico();
 		if (PA.vivoOuMorto() == true && A.getContinuaBatalha()==true && B.getContinuaBatalha()==true){
-			if (variaveldeacao>=11 && variaveldeacao<=50){
+			if (variaveldeacao>=11 && variaveldeacao<=60){
 				System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 				System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
 				System.out.println();
@@ -89,7 +89,7 @@ public class Batalha {
 		System.out.println();
 		variaveldeacao =gerarAcaoRandomico();
 		if (PB.vivoOuMorto() == true && B.getContinuaBatalha()==true && A.getContinuaBatalha()==true){
-			if(variaveldeacao>=11 && variaveldeacao<=50){
+			if(variaveldeacao>=11 && variaveldeacao<=60){
 				System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 				System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
 				System.out.println();

@@ -85,7 +85,7 @@ public class Batalha {
 			if (variaveldeacao==60 || variaveldeacao==61 )
 				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90 ) {
-				B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
+				//B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 				if (B.usaritem(PB)==false)
 					PB.pokemonAtaca(numerodoataque, PA); 
 			}
@@ -107,7 +107,7 @@ public class Batalha {
 			if (variaveldeacao==60 || variaveldeacao==61)
 				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90) {
-				A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
+				//A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 				if (A.usaritem(PA)==false)
 					PA.pokemonAtaca(numerodoataque, PB); 
 			}

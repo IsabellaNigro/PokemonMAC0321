@@ -84,8 +84,11 @@ public class Batalha {
 			}
 			if (variaveldeacao==60 || variaveldeacao==61 )
 				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
-			if (variaveldeacao>=62 && variaveldeacao<=90 )
+			if (variaveldeacao>=62 && variaveldeacao<=90 ) {
 				B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
+				if (B.usaritem(PB)==false)
+					PB.pokemonAtaca(numerodoataque, PA); 
+			}
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
 				B.trocarpokemon();
 				B.setTrocarPokemon(true);
@@ -103,8 +106,11 @@ public class Batalha {
 			}
 			if (variaveldeacao==60 || variaveldeacao==61)
 				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
-			if (variaveldeacao>=62 && variaveldeacao<=90)
+			if (variaveldeacao>=62 && variaveldeacao<=90) {
 				A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
+				if (A.usaritem(PA)==false)
+					PA.pokemonAtaca(numerodoataque, PB); 
+			}
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
 				A.trocarpokemon();
 				A.setTrocarPokemon(true);

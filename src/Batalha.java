@@ -82,7 +82,7 @@ public class Batalha {
 				vivoOuMorto(A, B, PA, PB);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61 )
-				B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+				//B.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90 )
 				B.usaritem(PB); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 			if (variaveldeacao>=91 && variaveldeacao<=100) {
@@ -101,7 +101,7 @@ public class Batalha {
 				vivoOuMorto(A, B, PA, PB);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61)
-				A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
+				//A.setContinuaBatalha(); //O TREINADOR FOGE DA BATALHA
 			if (variaveldeacao>=62 && variaveldeacao<=90)
 				A.usaritem(PA); // colocar condicao para fugir e curar nao ocorrerem ao mesmo tempo
 			if (variaveldeacao>=91 && variaveldeacao<=100) {

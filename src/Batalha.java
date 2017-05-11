@@ -77,7 +77,7 @@ public class Batalha {
 				System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 				System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
 				System.out.println();
-				PA.pokemonAtaca(numerodoataque, PB); 
+				PA.pokemonAtaca(numerodoataque, PB, PA); 
 			//dps de cada ataque devemos checar se o pokemon que recebeu o ataque nao morreu, se morreu devemos listar os pokemons tirando o morto
 				vivoOuMorto(A, B, PA, PB, i, j);
 			}
@@ -88,7 +88,7 @@ public class Batalha {
 					System.out.println("O treinador "+A.getNomeTreinador()+" irá atacar com o pokemón "+PA.getNomePokemon()+"!");
 					System.out.println("O treinador irá usar "+PA.imprimeAtaque(numerodoataque));
 					System.out.println();
-					PA.pokemonAtaca(numerodoataque, PB); 
+					PA.pokemonAtaca(numerodoataque, PB, PA); 
 					vivoOuMorto(A, B, PA, PB, i, j);
 				}
 				
@@ -106,7 +106,7 @@ public class Batalha {
 				System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 				System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
 				System.out.println();
-				PB.pokemonAtaca(numerodoataque, PA);
+				PB.pokemonAtaca(numerodoataque, PA, PB);
 				vivoOuMorto(A, B, PA, PB, i, j);
 			}
 			if (variaveldeacao==60 || variaveldeacao==61)
@@ -116,7 +116,7 @@ public class Batalha {
 					System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
 					System.out.println("O treinador irá usar "+PB.imprimeAtaque(numerodoataque));
 					System.out.println();
-					PB.pokemonAtaca(numerodoataque, PA); 
+					PB.pokemonAtaca(numerodoataque, PA, PB); 
 					vivoOuMorto(A, B, PA, PB, i, j);
 				}
 			}

@@ -52,7 +52,7 @@ abstract class Pokemon {
 		else return null;
 		
 	}
-	public void pokemonAtaca(int num, Pokemon inimigo){
+	public void pokemonAtaca(int num, Pokemon inimigo, Pokemon atual){
 		if (num >=1 && num<=4){
 			if (inimigo.getHPPokemon()-dano[num-1]>0)
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num-1]))+"/"+inimigo.getHPmax()+" de HP");

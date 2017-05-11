@@ -4,9 +4,9 @@ public class James extends Treinador {
 		super("James", 6, new String[] {"Pikachu", "Bulbasauro", "Charmander", "Onix", "Graveler", "Pidgeotto"});
 	}
 	
-	public void atacar(int num, Pokemon inimigo) {
+	public void atacar(int num, Pokemon inimigo, Pokemon atual) {
 		System.out.println("Ataque do James realizado com sucesso!");
-		inimigo.pokemonAtaca(num, inimigo);
+		inimigo.pokemonAtaca(num, inimigo, atual);
 	}
 	public void trocarpokemon() {
 		System.out.println("James trocou seu Pokemón!");

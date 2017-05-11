@@ -4,10 +4,6 @@ public class Ash extends Treinador {
 		super("Ash", 6, new String[] {"Pikachu", "Bulbasauro", "Charmander", "Onix", "Graveler", "Pidgeotto"});
 	}
 	
-	public void atacar(int num, Pokemon inimigo, Pokemon atual) {
-		System.out.println("Ataque do Ash realizado com sucesso!");
-		inimigo.pokemonAtaca(num, inimigo, atual);
-	}
 	public void trocarpokemon() {
 		System.out.println("Ash trocou seu Pokemón!");
 	}

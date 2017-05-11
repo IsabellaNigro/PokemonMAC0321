@@ -4,10 +4,6 @@ public class Brock extends Treinador {
 		super("Brock", 5, new String[] {"Ninetales", "Cyndaquil", "Dratini", "Totodile", "Squirtle", null});
 	}
 	
-	public void atacar(int num, Pokemon inimigo, Pokemon atual) {
-		System.out.println("Ataque do Brock realizado com sucesso!");
-		inimigo.pokemonAtaca(num, inimigo, atual);
-	}
 	public void trocarpokemon() {
 		System.out.println("Brock trocou seu Pokemón!");
 	}

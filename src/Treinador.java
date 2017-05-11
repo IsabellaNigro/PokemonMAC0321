@@ -17,9 +17,7 @@ abstract class Treinador {
 	}
 	abstract void atacar(int num,Pokemon inimigo);
 	abstract void trocarpokemon();
-	abstract boolean usaritem(Pokemon P);
-	//abstract void fugir();
-	
+	abstract boolean usaritem(Pokemon P);	
 	
 	public String getNomeTreinador() {
 		return treinador;
@@ -62,11 +60,6 @@ abstract class Treinador {
 	
 	public void setNomePokemon(int posicaodomorto) {
 		pokemon[posicaodomorto]=null;
-	}
-	
-	// devolve o valor de i, sendo P[i] o pokemon que ainda esta vivo e foi trocado
-	public void trocarPokemonAtual(Pokemon Atual, Pokemon Novo) {
-		System.out.println("O pokemón "+Atual.getNomePokemon()+" foi trocado pelo pokemón "+Novo.getNomePokemon());
 	}
 	
 }

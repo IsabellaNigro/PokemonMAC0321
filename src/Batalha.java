@@ -38,7 +38,7 @@ public class Batalha {
 	    return i;
 	}
 	
-	public static int gerarAcaoRandomico() {
+	public static int gerarAcaoRandomico() { //gera um numero aleatório entre 1 e 100 para definir a ação do treinador
 		int max=100;
 	    int min=1;
 	    int diff=max-min;
@@ -100,6 +100,7 @@ public class Batalha {
 		}
 		System.out.println();
 		variaveldeacao =gerarAcaoRandomico();
+		numerodoataque=gerarAtaqueRandomico();
 		if (PB.vivoOuMorto() == true && B.getContinuaBatalha()==true && A.getContinuaBatalha()==true){
 			if(variaveldeacao>=1 && variaveldeacao<=59){
 				System.out.println("O treinador "+B.getNomeTreinador()+" irá atacar com o pokemón "+PB.getNomePokemon()+"!");
@@ -233,7 +234,5 @@ public class Batalha {
 
 		iniciarBatalha (T1, T2, PA1, PB1);
 		iniciarBatalha (T3, T4, PA2, PB2);
-
-		
 	}
 }

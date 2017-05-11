@@ -14,12 +14,7 @@ public class James extends Treinador {
 	public void usaritem() {
 		System.out.println("James usou um item de cura!");
 	}
-	/*
-	public void fugir() {
-		System.out.println("James fugiu da batalha!");
-	}
-	*/
-	
+
 	public boolean usaritem(Pokemon P) {
 		if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 <= P.getHPmax()){
 			System.out.println("James usou um item de cura!");
@@ -28,13 +23,6 @@ public class James extends Treinador {
 			return true;
 		}
 		else if (P.vivoOuMorto() == true && P.getHPPokemon() + 25 > P.getHPmax()){
-			System.out.println("James tentou usar um item de cura");
-			System.out.println("James não pode usar um item de cura pois a vida do pokemón já está alta!");
-			return false;
-		}
-		else if (P.vivoOuMorto() != true){
-			System.out.println("James tentou usar um item de cura");
-			System.out.println("James não pode usar um item de cura pois o pokemón está morto!");
 			return false;
 		}
 		return true;

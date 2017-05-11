@@ -83,30 +83,20 @@ abstract class Pokemon {
 	}
 	public void pokemonAtaca(int num, Pokemon inimigo, Pokemon atual){
 		if (num >=1 && num<=4){
-			if (inimigo.getHPPokemon()-dano[num-1]>0){
+			if (inimigo.getHPPokemon()-dano[num-1]>0)
 				System.out.println("O pokemón "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP((int)(-(atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo())*(dano[num-1]))))+"/"+inimigo.getHPmax()+" de HP");
-				System.out.println("blah blah blah "+(atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo())));
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 0.0)
-					System.out.println("O ataque não funcionou!");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 0.5)
-					System.out.println("O ataque não foi muito efetivo!");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 1.0)
-					System.out.println("Dano normal");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 2.0)
-					System.out.println("Ataque muito efetivo!!!!!");
-				}
-			
-			else{
+
+			else
 				System.out.println("O pokemón "+inimigo.getNomePokemon()+" ficou com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 0.0)
+			
+			if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 0.0)
 				System.out.println("O ataque não funcionou!");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 0.5)
+			if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 0.5)
 				System.out.println("O ataque não foi muito efetivo!");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 1.0)
+			if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 1.0)
 				System.out.println("Dano normal");
-				if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 2.0)
+			if (atual.getMatrizdeDano(atual.getTipo(), inimigo.getTipo()) == 2.0)
 				System.out.println("Ataque muito efetivo!!!!!");
-				}
 		}
 	}
 	

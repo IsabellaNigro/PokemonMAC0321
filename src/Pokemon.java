@@ -9,11 +9,11 @@ abstract class Pokemon {
 	//cada ataque tem uma quantidade de dano
 	private int dano[] = new int[4];
 	//cada pokemon tem um tipo
-	private String tipo;
+	private int tipo;
 	//guardando o maximo de HP do pokemon
 	private int HPmax;
 	//construtor
-	Pokemon(String nome, int HP, String tipo, String ataque[], int dano[]){
+	Pokemon(String nome, int HP, int tipo, String ataque[], int dano[]){
 		this.nome = nome;
 		this.HPmax = HP;
 		this.HP = HP;
@@ -27,12 +27,39 @@ abstract class Pokemon {
 		this.dano[2] = dano[2];
 		this.dano[3] = dano[3];
 	}
+	
+	/*  		 grama fogo agua eletrico vento pedra dragao terra
+	 * grama      0.5  0.5  2.0    1.0     0.5   2.0   0.5    2.0       
+	 *	fogo	  2.0  0.5  0.5    1.0     1.0   0.5   1.0    1.0
+	 *	agua	  0.5  2.0  0.5    1.0     1.0   2.0   0.5    2.0
+	 *	eletrico  0.5  1.0  2.0    0.5     2.0   1.0   0.5    0.0
+	 *	vento	  2.0  1.0  1.0    0.5     1.0   0.5   1.0    1.0
+	 *	pedra	  1.0  2.0  1.0    1.0     2.0   1.0   1.0    0.5
+	 *	dragao	  1.0  1.0  1.0    1.0     1.0   1.0   2.0    1.0
+	 *	terra	  1.0  2.0  1.0    2.0     0.0   2.0   1.0    1.0
+	 */
+	private double tabeladedanos[][]= {
+			{0.5, 0.5, 2.0, 1.0, 0.5, 2.0, 0.5, 2.0},       
+			{2.0, 0.5, 0.5, 1.0, 1.0, 0.5, 1.0, 1.0},
+			{0.5, 2.0, 0.5, 1.0, 1.0, 2.0, 0.5, 2.0},
+			{0.5, 1.0, 2.0, 0.5, 2.0, 1.0, 0.5, 0.0},
+			{2.0, 1.0, 1.0, 0.5, 1.0, 0.5, 1.0, 1.0},
+			{1.0, 2.0, 1.0, 1.0, 2.0, 1.0, 1.0, 0.5},
+			{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0},
+			{1.0, 2.0, 1.0, 2.0, 0.0, 2.0, 1.0, 1.0},
+            };
+	
 	public String getNomePokemon(){
 		return nome;
 	}
 	
 	public int getHPPokemon(){
 		return HP;
+	}
+	
+	//metodo que retorna o tipo do pokemon
+	public int getTipo(){
+		return tipo;
 	}
 	
 	public int getHPmax(){
@@ -45,10 +72,8 @@ abstract class Pokemon {
 	}
 	//metodo para imprimir os ataques
 	public String imprimeAtaque(int num){
-		if (num == 1) return ataque[0];
-		if (num == 2) return ataque[1];
-		if (num == 3) return ataque[2];
-		if (num == 4) return ataque[3];
+		if (num>=1 && num<=4) 
+			return ataque[num -1];
 		else return null;
 		
 	}
@@ -57,7 +82,7 @@ abstract class Pokemon {
 			if (inimigo.getHPPokemon()-dano[num-1]>0)
 				System.out.println("O pokemon "+inimigo.getNomePokemon()+" está com "+inimigo.SetHP(-(dano[num-1]))+"/"+inimigo.getHPmax()+" de HP");
 			else
-				System.out.println("O pokemon "+inimigo.getNomePokemon()+" ficou com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
+				System.out.println("O pokemón "+inimigo.getNomePokemon()+" ficou com "+inimigo.SetHP(-inimigo.getHPPokemon())+" de HP e morreu!!");
 
 		}
 	}
